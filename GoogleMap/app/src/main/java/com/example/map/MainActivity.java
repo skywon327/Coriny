@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     private TextView SearchName;
     private float initialY, height;
     private boolean resizing = false;
-    private String str;
+    private String str, dd;
     private List<String> itemList = new ArrayList<>(); // 검색해서 나온 결과들 저장할 리스트 생성
 
     @Override
