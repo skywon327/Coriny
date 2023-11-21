@@ -25,7 +25,7 @@ public class DatePickerActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.exam_date_picker);
+        setContentView(R.layout.a1234);
 
         datePickerText = findViewById(R.id.date_picker_text);
 

@@ -2,7 +2,6 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -12,7 +11,6 @@
         android:id="@+id/date_picker_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
         android:layout_marginTop="100dp"
         android:text="날짜"
         android:textColor="@color/black"
@@ -39,5 +37,6 @@
             android:layout_marginRight="80dp"
             android:text="기간 선택" />
     </RelativeLayout>
+
 
 </LinearLayout>
