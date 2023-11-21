@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="style_navigation_view" parent="Widget.MaterialComponents.BottomNavigationView">
+
+        <item name="android:background">@color/white</item>
+        <item name="itemIconTint">@color/color_navigation_bar_icontint_text</item>
+        <item name="itemTextColor">@color/color_navigation_bar_icontint_text</item>
+        <item name="itemRippleColor">@color/color_navigation_bar_ripple</item>
+
+    </style>
+
+    <style name="style_search_bar" parent="Widget.Material3.SearchBar.Outlined">
+        <item name="strokeColor">#00000000</item>
+    </style>
+
+
+</resources>

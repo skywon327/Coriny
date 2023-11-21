@@ -1,0 +1,1006 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <ScrollView
+        android:id="@+id/sv_main_home"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!--  상단바 -->
+            <include
+                android:id="@+id/include"
+                layout="@layout/bar_top_home"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <!--  주간 캘린더  -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <CalendarView
+                    android:id="@+id/calendarView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layoutMode="clipBounds" />
+
+            </LinearLayout>
+
+            <!--  축구모임 카드뷰 2장  -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:orientation="vertical">
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/CardView1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    app:cardBackgroundColor="#66FFFFFF"
+                    app:strokeColor="#00000000">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="15dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <!-- Title, secondary and supporting text -->
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="축구모임1"
+                                android:textAppearance="?attr/textAppearanceTitleMedium"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                android:layout_marginBottom="4dp"/>
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:gravity="center">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="날짜 : 2023-11-18 (토)"
+                                    android:textAppearance="?attr/textAppearanceBodyMedium"
+                                    android:textColor="?android:attr/textColorSecondary"
+                                    android:textSize="12sp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:gravity="center"
+                                android:layout_marginBottom="4dp">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="위치 : 서울 전체 |"
+                                    android:textAppearance="?attr/textAppearanceBodyMedium"
+                                    android:textColor="?android:attr/textColorSecondary"
+                                    android:textSize="12sp"
+                                    android:layout_marginRight="5dp"/>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="인원 : 1/4"
+                                    android:textAppearance="?attr/textAppearanceBodyMedium"
+                                    android:textColor="?android:attr/textColorSecondary"
+                                    android:textSize="12sp" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <!-- ImageViews -->
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                app:srcCompat="@color/black"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/shape_oval"
+                                android:contentDescription="image"
+                                android:layout_marginRight="1dp"
+                                />
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                app:srcCompat="@color/black"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/shape_oval"
+                                android:contentDescription="image"
+                                android:layout_marginRight="1dp"
+                                />
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                app:srcCompat="@color/black"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/shape_oval"
+                                android:contentDescription="image"
+                                android:layout_marginRight="1dp"
+                                />
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/CardView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    app:cardBackgroundColor="#66FFFFFF"
+                    app:strokeColor="#00000000">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="15dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <!-- Title, secondary and supporting text -->
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="축구모임1"
+                                android:textAppearance="?attr/textAppearanceTitleMedium"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                android:layout_marginBottom="4dp"/>
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:gravity="center">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="날짜 : 2023-11-18 (토)"
+                                    android:textAppearance="?attr/textAppearanceBodyMedium"
+                                    android:textColor="?android:attr/textColorSecondary"
+                                    android:textSize="12sp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:gravity="center"
+                                android:layout_marginBottom="4dp">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="위치 : 서울 전체 |"
+                                    android:textAppearance="?attr/textAppearanceBodyMedium"
+                                    android:textColor="?android:attr/textColorSecondary"
+                                    android:textSize="12sp"
+                                    android:layout_marginRight="5dp"/>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="인원 : 1/4"
+                                    android:textAppearance="?attr/textAppearanceBodyMedium"
+                                    android:textColor="?android:attr/textColorSecondary"
+                                    android:textSize="12sp" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <!-- ImageViews -->
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                app:srcCompat="@color/black"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/shape_oval"
+                                android:contentDescription="image"
+                                android:layout_marginRight="1dp"
+                                />
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                app:srcCompat="@color/black"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/shape_oval"
+                                android:contentDescription="image"
+                                android:layout_marginRight="1dp"
+                                />
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                app:srcCompat="@color/black"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/shape_oval"
+                                android:contentDescription="image"
+                                android:layout_marginRight="1dp"
+                                />
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+
+            <!--  회원 추천  -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#F4F4F4"
+                android:orientation="vertical"
+                android:paddingTop="15dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingBottom="15dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="15dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="4dp"
+                        android:gravity="center">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0"
+                            android:text="회원추천"
+                            android:textAppearance="?attr/textAppearanceTitleMedium"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:textColor="#48AC82"/>
+                        <Space
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0"
+                            android:text="새로고침"
+                            android:textAppearance="?attr/textAppearanceTitleMedium"
+                            android:textSize="10sp"
+                            android:textColor="#262626"/>
+                        <ImageView
+                            android:id="@+id/imageButton"
+                            android:layout_width="12dp"
+                            android:layout_height="12dp"
+                            android:layout_weight="0"
+                            android:layout_gravity="center"
+                            android:scaleType="centerCrop"
+                            android:layout_marginTop="0.6dp"
+                            app:srcCompat="@drawable/baseline_cached_24" />
+                    </LinearLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="회원님과 관심사가 비슷해요&#x26A1;"
+                        android:textAppearance="?attr/textAppearanceBodyMedium"
+                        android:textColor="?android:attr/textColorSecondary"
+                        android:textSize="12sp"
+                        android:layout_marginBottom="8dp"/>
+                </LinearLayout>
+
+
+                <!--  회원 프로필  -->
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="16dp"
+                            android:orientation="vertical">
+                            <ImageView
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                app:srcCompat="@color/black"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/shape_oval"
+                                android:contentDescription="image"
+                                android:layout_marginBottom="8dp"/>
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:src="@drawable/shape_line2"/>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="16dp"
+                            android:orientation="vertical">
+                            <ImageView
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                app:srcCompat="@color/black"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/shape_oval"
+                                android:contentDescription="image"
+                                android:layout_marginBottom="8dp"/>
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:src="@drawable/shape_line2"
+                                android:visibility="invisible"/>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="16dp"
+                            android:orientation="vertical">
+                            <ImageView
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                app:srcCompat="@color/black"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/shape_oval"
+                                android:contentDescription="image"
+                                android:layout_marginBottom="8dp"/>
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:src="@drawable/shape_line2"
+                                android:visibility="invisible"/>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="16dp"
+                            android:orientation="vertical">
+                            <ImageView
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                app:srcCompat="@color/black"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/shape_oval"
+                                android:contentDescription="image"
+                                android:layout_marginBottom="8dp"/>
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:src="@drawable/shape_line2"
+                                android:visibility="invisible"/>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="16dp"
+                            android:orientation="vertical">
+                            <ImageView
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                app:srcCompat="@color/black"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/shape_oval"
+                                android:contentDescription="image"
+                                android:layout_marginBottom="8dp"/>
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:src="@drawable/shape_line2"
+                                android:visibility="invisible"/>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="16dp"
+                            android:orientation="vertical">
+                            <ImageView
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                app:srcCompat="@color/black"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/shape_oval"
+                                android:contentDescription="image"
+                                android:layout_marginBottom="8dp"/>
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:src="@drawable/shape_line2"
+                                android:visibility="invisible"/>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="16dp"
+                            android:orientation="vertical">
+                            <ImageView
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                app:srcCompat="@color/black"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/shape_oval"
+                                android:contentDescription="image"
+                                android:layout_marginBottom="8dp"/>
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:src="@drawable/shape_line2"
+                                android:visibility="invisible"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                </HorizontalScrollView>
+
+
+            </LinearLayout>
+
+            <!--  축구모임 카드뷰 n장  -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:orientation="vertical">
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/CardView3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    app:cardBackgroundColor="#66FFFFFF"
+                    app:strokeColor="#00000000">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="15dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <!-- Title, secondary and supporting text -->
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="축구모임1"
+                                android:textAppearance="?attr/textAppearanceTitleMedium"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                android:layout_marginBottom="4dp"/>
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:gravity="center">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="날짜 : 2023-11-18 (토)"
+                                    android:textAppearance="?attr/textAppearanceBodyMedium"
+                                    android:textColor="?android:attr/textColorSecondary"
+                                    android:textSize="12sp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:gravity="center"
+                                android:layout_marginBottom="4dp">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="위치 : 서울 전체 |"
+                                    android:textAppearance="?attr/textAppearanceBodyMedium"
+                                    android:textColor="?android:attr/textColorSecondary"
+                                    android:textSize="12sp"
+                                    android:layout_marginRight="5dp"/>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="인원 : 1/4"
+                                    android:textAppearance="?attr/textAppearanceBodyMedium"
+                                    android:textColor="?android:attr/textColorSecondary"
+                                    android:textSize="12sp" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <!-- ImageViews -->
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                app:srcCompat="@color/black"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/shape_oval"
+                                android:contentDescription="image"
+                                android:layout_marginRight="1dp"
+                                />
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                app:srcCompat="@color/black"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/shape_oval"
+                                android:contentDescription="image"
+                                android:layout_marginRight="1dp"
+                                />
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                app:srcCompat="@color/black"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/shape_oval"
+                                android:contentDescription="image"
+                                android:layout_marginRight="1dp"
+                                />
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/CardView4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    app:cardBackgroundColor="#66FFFFFF"
+                    app:strokeColor="#00000000">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="15dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <!-- Title, secondary and supporting text -->
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="축구모임1"
+                                android:textAppearance="?attr/textAppearanceTitleMedium"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                android:layout_marginBottom="4dp"/>
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:gravity="center">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="날짜 : 2023-11-18 (토)"
+                                    android:textAppearance="?attr/textAppearanceBodyMedium"
+                                    android:textColor="?android:attr/textColorSecondary"
+                                    android:textSize="12sp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:gravity="center"
+                                android:layout_marginBottom="4dp">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="위치 : 서울 전체 |"
+                                    android:textAppearance="?attr/textAppearanceBodyMedium"
+                                    android:textColor="?android:attr/textColorSecondary"
+                                    android:textSize="12sp"
+                                    android:layout_marginRight="5dp"/>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="인원 : 1/4"
+                                    android:textAppearance="?attr/textAppearanceBodyMedium"
+                                    android:textColor="?android:attr/textColorSecondary"
+                                    android:textSize="12sp" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <!-- ImageViews -->
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                app:srcCompat="@color/black"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/shape_oval"
+                                android:contentDescription="image"
+                                android:layout_marginRight="1dp"
+                                />
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                app:srcCompat="@color/black"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/shape_oval"
+                                android:contentDescription="image"
+                                android:layout_marginRight="1dp"
+                                />
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                app:srcCompat="@color/black"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/shape_oval"
+                                android:contentDescription="image"
+                                android:layout_marginRight="1dp"
+                                />
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/CardView5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    app:cardBackgroundColor="#66FFFFFF"
+                    app:strokeColor="#00000000">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="15dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <!-- Title, secondary and supporting text -->
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="축구모임1"
+                                android:textAppearance="?attr/textAppearanceTitleMedium"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                android:layout_marginBottom="4dp"/>
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:gravity="center">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="날짜 : 2023-11-18 (토)"
+                                    android:textAppearance="?attr/textAppearanceBodyMedium"
+                                    android:textColor="?android:attr/textColorSecondary"
+                                    android:textSize="12sp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:gravity="center"
+                                android:layout_marginBottom="4dp">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="위치 : 서울 전체 |"
+                                    android:textAppearance="?attr/textAppearanceBodyMedium"
+                                    android:textColor="?android:attr/textColorSecondary"
+                                    android:textSize="12sp"
+                                    android:layout_marginRight="5dp"/>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="인원 : 1/4"
+                                    android:textAppearance="?attr/textAppearanceBodyMedium"
+                                    android:textColor="?android:attr/textColorSecondary"
+                                    android:textSize="12sp" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <!-- ImageViews -->
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                app:srcCompat="@color/black"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/shape_oval"
+                                android:contentDescription="image"
+                                android:layout_marginRight="1dp"
+                                />
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                app:srcCompat="@color/black"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/shape_oval"
+                                android:contentDescription="image"
+                                android:layout_marginRight="1dp"
+                                />
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                app:srcCompat="@color/black"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/shape_oval"
+                                android:contentDescription="image"
+                                android:layout_marginRight="1dp"
+                                />
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/CardView6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    app:cardBackgroundColor="#66FFFFFF"
+                    app:strokeColor="#00000000">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="15dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <!-- Title, secondary and supporting text -->
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="축구모임1"
+                                android:textAppearance="?attr/textAppearanceTitleMedium"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                android:layout_marginBottom="4dp"/>
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:gravity="center">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="날짜 : 2023-11-18 (토)"
+                                    android:textAppearance="?attr/textAppearanceBodyMedium"
+                                    android:textColor="?android:attr/textColorSecondary"
+                                    android:textSize="12sp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:gravity="center"
+                                android:layout_marginBottom="4dp">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="위치 : 서울 전체 |"
+                                    android:textAppearance="?attr/textAppearanceBodyMedium"
+                                    android:textColor="?android:attr/textColorSecondary"
+                                    android:textSize="12sp"
+                                    android:layout_marginRight="5dp"/>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="인원 : 1/4"
+                                    android:textAppearance="?attr/textAppearanceBodyMedium"
+                                    android:textColor="?android:attr/textColorSecondary"
+                                    android:textSize="12sp" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <!-- ImageViews -->
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                app:srcCompat="@color/black"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/shape_oval"
+                                android:contentDescription="image"
+                                android:layout_marginRight="1dp"
+                                />
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                app:srcCompat="@color/black"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/shape_oval"
+                                android:contentDescription="image"
+                                android:layout_marginRight="1dp"
+                                />
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                app:srcCompat="@color/black"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/shape_oval"
+                                android:contentDescription="image"
+                                android:layout_marginRight="1dp"
+                                />
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/CardView7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    app:cardBackgroundColor="#66FFFFFF"
+                    app:strokeColor="#00000000">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="15dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <!-- Title, secondary and supporting text -->
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="축구모임1"
+                                android:textAppearance="?attr/textAppearanceTitleMedium"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                android:layout_marginBottom="4dp"/>
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:gravity="center">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="날짜 : 2023-11-18 (토)"
+                                    android:textAppearance="?attr/textAppearanceBodyMedium"
+                                    android:textColor="?android:attr/textColorSecondary"
+                                    android:textSize="12sp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:gravity="center"
+                                android:layout_marginBottom="4dp">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="위치 : 서울 전체 |"
+                                    android:textAppearance="?attr/textAppearanceBodyMedium"
+                                    android:textColor="?android:attr/textColorSecondary"
+                                    android:textSize="12sp"
+                                    android:layout_marginRight="5dp"/>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="인원 : 1/4"
+                                    android:textAppearance="?attr/textAppearanceBodyMedium"
+                                    android:textColor="?android:attr/textColorSecondary"
+                                    android:textSize="12sp" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <!-- ImageViews -->
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                app:srcCompat="@color/black"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/shape_oval"
+                                android:contentDescription="image"
+                                android:layout_marginRight="1dp"
+                                />
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                app:srcCompat="@color/black"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/shape_oval"
+                                android:contentDescription="image"
+                                android:layout_marginRight="1dp"
+                                />
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                app:srcCompat="@color/black"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/shape_oval"
+                                android:contentDescription="image"
+                                android:layout_marginRight="1dp"
+                                />
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@drawable/logo_ballmate"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/logo_ballmate"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.BallMate"
+        tools:targetApi="31">
+        <!--  가로 화면 설정 : android:screenOrientation="portrait"  -->
+        <!--  키보드가 레이아웃 밀어내지 않도록 설정 : android:windowSoftInputMode="adjustPan"  -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
