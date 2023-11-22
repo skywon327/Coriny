@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#D2F0E4"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:id="@+id/topLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/backButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="←"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp" />
+
+        <TextView
+            android:id="@+id/settingButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="←"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp" />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/bottomLayout"
+        android:layout_width="match_parent"
+        android:layout_height="603dp"
+        android:layout_gravity="bottom"
+        android:background="#FFFFFF">
+
+        <Button
+            android:id="@+id/chatButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="80dp"
+            android:layout_marginEnd="-200dp"
+            android:layout_toStartOf="@+id/followButton"
+            android:text="채팅" />
+
+        <Button
+            android:id="@+id/followButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="210dp"
+            android:layout_marginTop="80dp"
+            android:text="팔로우" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/followButton">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- 자기 소개 -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="자기 소개"
+                    android:textSize="18dp"
+                    android:padding="0dp"/>
+
+                <EditText
+                    android:id="@+id/userintro"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="자기소개를 입력해주세요."/>
+
+                <!-- 친구 목록 -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="친구 목록"
+                    android:textSize="18sp"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/friendsRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"/>
+
+                <!-- 게시글 목록 -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="게시글 목록"
+                    android:textSize="18sp"
+                    android:padding="16dp"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/postsRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"/>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/profilePicture"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/profile_test"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/circular_background"
+        android:clipToOutline="true"
+        android:layout_marginTop="-238dp"
+        android:layout_gravity="center"
+        android:scaleType="centerCrop"/>
+
+</FrameLayout>
