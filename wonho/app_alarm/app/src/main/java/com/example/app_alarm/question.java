@@ -1,5 +1,7 @@
 package com.example.app_alarm;
 // question.java
+
+// 필요한 패키지 및 클래스 import 선언
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.ClipData;
@@ -7,12 +9,15 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -24,7 +29,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class question extends AppCompatActivity {
-    private AlertDialog imageSourceDialog; // AlertDialog에 대한 참조 추가
+    // AlertDialog에 대한 참조 추가
+    private AlertDialog imageSourceDialog;
+
     // 상수 정의: 카메라로부터 이미지 가져오기 및 갤러리에서 이미지 선택하기에 사용됨
     private static final int REQUEST_IMAGE_CAPTURE = 1;
     private static final int REQUEST_IMAGE_PICK = 2;
@@ -33,27 +40,69 @@ public class question extends AppCompatActivity {
     private ListView list_item;
     private ArrayAdapter<Item> adapter;
     private List<Item> itemList;
-    boolean lastitemVisibleFlag =false;
-    // Counter for dynamically generating item names
+    boolean lastitemVisibleFlag = false;
+
+    // 동적으로 생성된 아이템 이름을 위한 카운터
     private int itemCounter = 1;
+    private static final int MAX_LENGTH = 4;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.question);
 
+        // XML 레이아웃에서 EditText와 TextView를 찾아옵니다.
+        EditText textbox = findViewById(R.id.textbox);
+        final TextView charCount = findViewById(R.id.charCount);
+
+        // 초기 상태에서 TextView에 "0/4"을 표시합니다.
+        charCount.setText("0/" + MAX_LENGTH);
+
+        // EditText에 텍스트 변경 감지자(TextWatcher)를 추가합니다.
+        textbox.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int start, int count, int after) {
+                // 이전 텍스트 변경 전에 호출됩니다.
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int start, int before, int count) {
+                // 텍스트가 변경될 때 호출됩니다.
+
+                // 현재 입력된 텍스트의 길이를 가져옵니다.
+                int currentLength = charSequence.length();
+
+                // 최대 길이를 초과한 경우, 초과된 부분을 삭제합니다.
+                if (currentLength >= MAX_LENGTH) {
+                    // 초과된 부분을 삭제합니다.
+                    Editable editable = textbox.getText();
+                    editable.delete(MAX_LENGTH, currentLength);
+                    currentLength = charSequence.length();
+                }
+
+                // 길이를 TextView에 표시합니다.
+                charCount.setText(currentLength + "/" + MAX_LENGTH);
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                // afterTextChanged 메서드는 더 이상 사용되지 않습니다.
+                // 여기에 코드를 추가하려면 onTextChanged에서 처리하면 됩니다.
+            }
+        });
+
+        // 상단 텍스트 및 이미지 설정
         TextView text_name = (TextView) findViewById(R.id.text_name);
         text_name.setText("문의하기");
         ImageView image_name = (ImageView)findViewById(R.id.image_name);
         image_name.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(question.this, MainActivity.class);//넘겨받을 화면은 this, 이동할 화면은 class
+                Intent intent = new Intent(question.this, MainActivity.class);
                 startActivity(intent);
             }
-
-
         });
+
         // UI 요소 초기화
         list_item = findViewById(R.id.list_item);
 
@@ -92,6 +141,7 @@ public class question extends AppCompatActivity {
 
         // 리스트뷰에 어댑터 설정
         list_item.setAdapter(adapter);
+
         // 이미지 추가 버튼 클릭 시 이벤트 처리
         ImageView fileAddButton = findViewById(R.id.file_add);
         fileAddButton.setOnClickListener(new View.OnClickListener() {
@@ -105,7 +155,7 @@ public class question extends AppCompatActivity {
     // 이미지 소스 다이얼로그 표시
     private void showImageSourceDialog() {
         // 다이얼로그에 사용될 사용자 정의 레이아웃을 인플레이트합니다.
-        View dialogView = LayoutInflater.from(this).inflate(R.layout.question_file_choise, null);
+        View dialogView = LayoutInflater.from(this).inflate(R.layout.question_file_choice, null);
 
         // AlertDialog 빌더를 만듭니다.
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -232,5 +282,4 @@ public class question extends AppCompatActivity {
             return imageBitmap;
         }
     }
-
 }

@@ -1,0 +1,28 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginBottom="15dp">
+        <!-- 입력을 받을 EditText -->
+        <EditText
+            android:id="@+id/textbox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="top|start"
+            android:inputType="textMultiLine"
+            android:background="@android:color/transparent"
+            android:hint="문의내용을 입력해 주세요" />
+
+        <!-- 글자 수를 표시할 TextView -->
+        <TextView
+            android:id="@+id/charCount"
+            android:layout_gravity="right|bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"/>
+    </FrameLayout>
+</RelativeLayout>

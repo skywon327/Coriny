@@ -1,0 +1,19 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="300dp"
+    android:layout_height="200dp"
+    android:gravity="center">
+
+    <ImageView
+        android:id="@+id/cameraImageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/camera"
+        android:layout_marginRight="50dp"/>
+
+    <ImageView
+        android:id="@+id/galleryImageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/gallery"/>
+
+</LinearLayout>
