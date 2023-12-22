@@ -50,7 +50,7 @@
 
 
                 <com.google.android.material.search.SearchBar
-                    android:id="@+id/main_search_bar"
+                    android:id="@+id/main_home_search_bar"
                     android:layout_width="27dp"
                     android:layout_height="27dp"
                     android:layout_gravity="center"
@@ -73,7 +73,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:hint="검색어를 입력하세요"
-            app:layout_anchor="@id/main_search_bar">
+            app:layout_anchor="@id/main_home_search_bar">
             <!-- Search suggestions/results go here (ScrollView, RecyclerView, etc.). -->
 
         </com.google.android.material.search.SearchView>

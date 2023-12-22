@@ -48,26 +48,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-//        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-//            @Override
-//            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-//                // 아이템 선택 처리
-//                if (item.getItemId() == R.id.menu_home) {
-//                    setFrag(0);
-//                } else if (item.getItemId() == R.id.menu_calender) {
-//                    setFrag(1);
-//                } else if (item.getItemId() == R.id.menu_icon_chat) {
-//                    setFrag(2);
-//                } else if (item.getItemId() == R.id.menu_icon_stadium) {
-//                    setFrag(3);
-//                } else if (item.getItemId() == R.id.menu_icon_people) {
-//                    setFrag(4);
-//                }
-//                return true;
-//            }
-//        });
-
-
         mainCalendar = new MainCalendar();
         mainChat = new MainChat();
         mainHome = new MainHome();
