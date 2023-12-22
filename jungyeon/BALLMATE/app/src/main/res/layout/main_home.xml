@@ -7,6 +7,7 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+    <!--  달력 및 일정 목록  -->
     <ScrollView
         android:id="@+id/sv_main_home"
         android:layout_width="match_parent"
@@ -16,28 +17,25 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent">
 
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <!--  상단바 -->
-            <include
-                android:id="@+id/include"
-                layout="@layout/bar_top_home"
+
+            <!--      상단바 공백(검색창)      -->
+            <Space
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="77dp"
+                android:layout_marginLeft="13dp"
+                android:layout_marginRight="10dp"/>
 
             <!--  주간 캘린더  -->
-            <androidx.recyclerview.widget.RecyclerView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
-
 
                 <CalendarView
                     android:id="@+id/calendarView"
@@ -1006,6 +1004,95 @@
 
         </LinearLayout>
 
+
+
     </ScrollView>
+
+    <!--  상단바 및 검색창 -->
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <!-- NestedScrollingChild goes here (NestedScrollView, RecyclerView, etc.). -->
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/searchbar_scrolling_view_behavior">
+            <!-- Screen content goes here. -->
+        </androidx.core.widget.NestedScrollView>
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/main"
+                >
+                <LinearLayout
+                    android:id="@+id/ll1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="13dp"
+                    android:layout_marginRight="10dp">
+
+                    <ImageView
+                        android:id="@+id/logo_main"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="0"
+                        android:src="@drawable/logo_ballmate"/>
+
+                    <Space
+                        android:layout_width="0dp"
+                        android:layout_height="77dp"
+                        android:layout_weight="1" />
+
+                    <CheckBox
+                        android:id="@+id/icon_bell"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_gravity="center"
+                        android:button="@drawable/drawable_icon_bell_select"
+                        app:buttonTint="@color/color_icon_buttontint"/>
+
+                    <com.google.android.material.search.SearchBar
+                        android:id="@+id/main_home_search_bar"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_gravity="center"
+                        style="@style/style_search_bar"
+                        android:hint="검색창"
+                        android:backgroundTint="#00000000" />
+
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+
+                    android:src="@drawable/shape_line" />
+
+            </LinearLayout>
+
+
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <com.google.android.material.search.SearchView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="검색어를 입력하세요(홈 화면)"
+            app:layout_anchor="@+id/main_home_search_bar">
+            <!-- Search suggestions/results go here (ScrollView, RecyclerView, etc.). -->
+        </com.google.android.material.search.SearchView>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
